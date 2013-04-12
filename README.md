@@ -1,6 +1,8 @@
 # EasyEnv
 
-TODO: Write a gem description
+Even easier access to environment variables in Ruby.
+
+Basically, replaces `ENV["LONG_ENV_NAME"]` with `ENV.long_env_name`.
 
 ## Installation
 
@@ -18,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Just access your environment vars as `ENV.long_env_name` instead of `ENV["LONG_ENV_NAME"]`.  It makes no pains to support mixed-case ENV vars.  They are abominations.
+
+Also, `ENV.unknown_var` will return `nil`, instead of raising `NoMethodError`.  
+
+~~~ ruby
+ENV["FOO_BAR"] = "hi"
+ENV.foo_bar                   # hi
+ENV.respond_to? :foo_bar      # true
+ENV.unknown_name              # nil, not NoMethodError
+ENV.respond_to? :unknown_name # false
+~~~
+
+
+See also: [dotenv](https://github.com/bkeepers/dotenv).
 
 ## Contributing
 
