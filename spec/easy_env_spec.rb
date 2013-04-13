@@ -14,7 +14,7 @@ describe ENV do
       expect(ENV.name).to eq("1")
     end
 
-    it 'responds to the selector' do
+    it 'responds' do
       expect(ENV).to respond_to("name")
     end
   end
@@ -25,7 +25,7 @@ describe ENV do
       expect(ENV["FOO"]).to eq("hi")
     end
 
-    it 'responds to the selector' do
+    it 'responds' do
       expect(ENV).to respond_to("foo=")
     end
   end
@@ -38,7 +38,7 @@ describe ENV do
       expect(ENV.complex_name).to eq("2")
     end
 
-    it 'responds to the selector' do
+    it 'responds' do
       expect(ENV).to respond_to("complex_name")
     end
   end
@@ -48,7 +48,7 @@ describe ENV do
       expect(ENV.unknown_name).to be_nil
     end
 
-    it "doesn't respond to the selector" do
+    it "doesn't respond" do
       expect(ENV).not_to respond_to("unknown_name")
     end
   end
